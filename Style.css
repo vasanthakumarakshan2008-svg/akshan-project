@@ -370,3 +370,41 @@ footer {
     margin-top: 25px;
     color: #00ffcc;
 }
+
+#cursor-glow {
+    position: fixed;
+    width: 22px;
+    height: 22px;
+    border: 2px solid cyan;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    transition: width 0.15s ease, height 0.15s ease;
+}
+
+.cursor-particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: cyan;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    box-shadow: 0 0 6px cyan, 0 0 12px cyan;
+    transform: translate(-50%, -50%);
+    animation: particleFade 0.6s linear forwards;
+}
+
+@keyframes particleFade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -80%) scale(0);
+    }
+}

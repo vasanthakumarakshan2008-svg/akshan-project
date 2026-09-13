@@ -42,3 +42,24 @@ function typeWriter() {
 }
 
 typeWriter();
+
+const cursorGlow = document.getElementById("cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+    cursorGlow.style.left = e.clientX + "px";
+    cursorGlow.style.top = e.clientY + "px";
+});
+
+document.addEventListener("mousemove", (e) => {
+    const particle = document.createElement("span");
+    particle.className = "cursor-particle";
+
+    particle.style.left = e.clientX + "px";
+    particle.style.top = e.clientY + "px";
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => {
+        particle.remove();
+    }, 600);
+});
